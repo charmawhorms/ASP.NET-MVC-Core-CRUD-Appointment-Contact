@@ -1,0 +1,89 @@
+﻿@model AppointmentContact.Models.Appointment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center">Create Appointment Contact</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <form asp-action="Create" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="first_nm" class="control-label"></label>
+                <input asp-for="first_nm" class="form-control"/>
+                <span asp-validation-for="first_nm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="last_nm" class="control-label"></label>
+                <input asp-for="last_nm" class="form-control" />
+                <span asp-validation-for="last_nm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dob" class="control-label"></label>
+                <input asp-for="dob" type="date" class="form-control" />
+                <span asp-validation-for="dob" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email_addr" class="control-label"></label>
+                <input asp-for="email_addr" class="form-control" />
+                <span asp-validation-for="email_addr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone_nbr" class="control-label"></label>
+                <input asp-for="phone_nbr" class="form-control" />
+                <span asp-validation-for="phone_nbr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="address" class="control-label"></label>
+                <input asp-for="address" class="form-control" />
+                <span asp-validation-for="address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="city" class="control-label"></label>
+                <input asp-for="city" class="form-control" />
+                <span asp-validation-for="city" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="parish" class="control-label"></label>
+                <select asp-for="parish" class="form-control" asp>
+                    <option>---Select parish---</option>
+                    <option>Hanover</option>
+                    <option>St. Elizabeth</option>
+                    <option>St. James</option>
+                    <option>Trelawny</option>
+                    <option>Westmoreland</option>
+                    <option>Clarendon</option>
+                    <option>Manchester</option>
+                    <option>St. Ann</option>
+                    <option>St. Catherine</option>
+                    <option>St. Mary</option>
+                    <option>Kingston</option>
+                    <option>Portland</option>
+                    <option>St. Andrew</option>
+                    <option>St. Thomas</option>
+                </select>
+                <span asp-validation-for="parish" class="text-danger"></span>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary w-100" onclick="saveAppointmentContact()"/>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a asp-action="Index" class="btn btn-secondary w-100">View All</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
